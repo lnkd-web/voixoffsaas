@@ -1,0 +1,24 @@
+{
+  "name": "voix-off-saas",
+  "version": "1.0.0",
+  "description": "la belle voix",
+  "main": "script.js",
+  "scripts": {
+    "start": "node script.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lnkd-web/voixoffsaas.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lnkd-web/voixoffsaas/issues"
+  },
+  "homepage": "https://github.com/lnkd-web/voixoffsaas#readme",
+  "dependencies": {
+    "express": "^4.19.2",
+    "dotenv": "^16.4.5",
+    "axios": "^1.7.4"
+  }
+}
