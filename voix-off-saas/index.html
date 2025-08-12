@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Voix Off IA — Générateur</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand">
+        <img src="https://img.icons8.com/fluency/48/000000/voice-recognition.png" alt="logo" />
+        <h1>VoixOffIA</h1>
+      </div>
+      <div class="controls">
+        <label class="theme-switch">
+          Thème
+          <select id="themeSelect" aria-label="Choisir un thème">
+            <option value="light">Clair</option>
+            <option value="dark" selected>Sombre</option>
+            <option value="violet">Violet</option>
+          </select>
+        </label>
+      </div>
+    </header>
+
+    <section class="container">
+      <section class="left">
+        <h2>Écris ton script</h2>
+        <textarea id="textInput" placeholder="Tape ton texte ici. Exemple : Bonjour à tous, ceci est une démo..." ></textarea>
+
+        <div class="row">
+          <div class="field">
+            <label for="voiceSelect">Voix</label>
+            <select id="voiceSelect">
+              <option value="default">Voix par défaut</option>
+              <option value="female">Femme (clair)</option>
+              <option value="male">Homme (grave)</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="speedRange">Vitesse</label>
+            <input id="speedRange" type="range" min="0.6" max="1.6" step="0.1" value="1" />
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="generateBtn" class="btn primary">Générer la voix</button>
+          <button id="clearBtn" class="btn">Effacer</button>
+        </div>
+
+        <p class="note">Version MVP — le bouton "Générer" attend un backend. Voir instructions en bas.</p>
+      </section>
+
+      <aside class="right">
+        <h2>Conversation / Sortie</h2>
+        <div id="chatWindow" class="chat-window" aria-live="polite">
+          <!-- Les bulles de texte apparaîtront ici -->
+        </div>
+
+        <div id="playerWrap" class="player" hidden>
+          <audio id="audioPlayer" controls></audio>
+          <a id="downloadBtn" class="btn small" download="voixoff.mp3">Télécharger</a>
+        </div>
+      </aside>
+    </section>
+
+    <footer class="footer">
+      <small>© VoixOffIA — Prototype • Intègre ElevenLabs / OpenAI TTS côté serveur</small>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
